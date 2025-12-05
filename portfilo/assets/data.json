@@ -1,0 +1,353 @@
+{
+    "person": {
+        "name_ar": "عبدالسلام شليبك",
+        "name_en": "Abdusalam Shlebak",
+        "title_ar": "ناشط حقوق الإعاقة | مؤسس | مدون",
+        "title_en": "Disability Rights Activist | Founder | Blogger",
+        "bio_ar": "ولدت في 23 أكتوبر 1971 في ضواحي طرابلس. تعرضت لشلل الأطفال في سن مبكرة، مما شكل دافعاً لي لتكريس حياتي للدفاع عن حقوق الأشخاص ذوي الإعاقة. رحلتي من العلاج في بلغراد وفيينا إلى تأسيس المبادرات الرقمية والحقوقية هي قصة تحدٍ وإصرار. شعاري الدائم: أكون أو لا أكون.",
+        "bio_en": "Born on October 23, 1971, in the suburbs of Tripoli. I contracted polio at an early age, which motivated me to dedicate my life to advocating for disability rights. My journey from treatment in Belgrade and Vienna to founding digital and human rights initiatives is a story of challenge and determination. My motto: To be or not to be.",
+        "email": "info@absi.ly",
+        "image": "https://www.absi.ly/wp-content/uploads/2023/01/absi1.jpg",
+        "hero_image": "https://www.absi.ly/wp-content/uploads/2023/01/Absi.png"
+    },
+    "stats": {
+        "years": 20,
+        "orgs": 8,
+        "countries": 12
+    },
+    "social": {
+        "twitter": "https://twitter.com/absily",
+        "facebook": "http://www.facebook.com/absily",
+        "linkedin": "http://www.linkedin.com/pub/abdusalam-shlebak/53/569/1a1"
+    },
+    "timeline": [
+        {
+            "year": "1976-1982",
+            "title_ar": "رحلة العلاج والتعليم",
+            "title_en": "Treatment & Education",
+            "desc_ar": "سافرت إلى بلغراد للعلاج وعمري 5 سنوات. درست الابتدائية هناك وتعلمت اللغة الصربية.",
+            "desc_en": "Traveled to Belgrade for treatment at age 5. Completed primary school there and learned Serbian."
+        },
+        {
+            "year": "1983",
+            "title_ar": "العودة والبحث",
+            "title_en": "Return & Search",
+            "desc_ar": "عدت إلى ليبيا ثم سافرت إلى فيينا للعلاج. واجهت صعوبات في الاندماج بسبب غياب البنية التحتية.",
+            "desc_en": "Returned to Libya then traveled to Vienna for treatment. Faced integration challenges due to lack of infrastructure."
+        },
+        {
+            "year": "1980s-90s",
+            "title_ar": "التعلم الذاتي",
+            "title_en": "Self-Learning",
+            "desc_ar": "بدأت رحلة التعلم الذاتي من خلال البرامج التلفزيونية والوثائقية لتوسيع مداركي.",
+            "desc_en": "Started a self-learning journey through TV programs and documentaries to expand my knowledge."
+        },
+        {
+            "year": "2004",
+            "title_ar": "الانطلاق الرقمي",
+            "title_en": "Digital Launch",
+            "desc_ar": "أطلقت أول موقع إلكتروني لي 'جنزور ماي هوم'. كانت انطلاقتي نحو عالم التصميم.",
+            "desc_en": "Launched my first website 'Janzour My Home'. My start in the world of web design."
+        },
+        {
+            "year": "2006",
+            "title_ar": "المنتديات",
+            "title_en": "Forums",
+            "desc_ar": "بدأت النشاط في المنتديات الليبية (شباب ليبيا، أويا) كمشرف قسم البرامج.",
+            "desc_en": "Started activity in Libyan forums (Libya Youth, Oea) as a software section moderator."
+        },
+        {
+            "year": "2007",
+            "title_ar": "يوتيوب وفيسبوك",
+            "title_en": "YouTube & Facebook",
+            "desc_ar": "أطلقت قناة 'جنزور كم' على يوتيوب وانضممت لفيسبوك.",
+            "desc_en": "Launched 'Janzour.com' channel on YouTube and joined Facebook."
+        },
+        {
+            "year": "2008",
+            "title_ar": "اللجنة البارالمبية",
+            "title_en": "Paralympic Committee",
+            "desc_ar": "انضممت لمكتب الإعلام باللجنة البارالمبية الليبية وعملت كمصمم للموقع.",
+            "desc_en": "Joined the Media Office of the Libyan Paralympic Committee and worked as a web designer."
+        },
+        {
+            "year": "2009",
+            "title_ar": "مؤتمر المرأة ذات الإعاقة",
+            "title_en": "Women with Disabilities Conf",
+            "desc_ar": "المؤتمر الأول للمرأة ذات الإعاقة بالمغرب العربي - طرابلس.",
+            "desc_en": "First Conference for Women with Disabilities in the Arab Maghreb - Tripoli."
+        },
+        {
+            "year": "2009",
+            "title_ar": "مؤتمر الإعاقات الذهنية",
+            "title_en": "Intellectual Disabilities Conf",
+            "desc_ar": "مؤتمر سياسات التعامل مع الإعاقات الذهنية بالوطن العربي - بنغازي.",
+            "desc_en": "Conference on Policies for Dealing with Intellectual Disabilities in the Arab World - Benghazi."
+        },
+        {
+            "year": "2009",
+            "title_ar": "التدوين",
+            "title_en": "Blogging",
+            "desc_ar": "بدأت التدوين عبر مدونة absily.wordpress.com عن حقوق ذوي الإعاقة.",
+            "desc_en": "Started blogging via absily.wordpress.com about disability rights."
+        },
+        {
+            "year": "2010",
+            "title_ar": "بطولة العالم لكرة الجلوس",
+            "title_en": "Sitting Volleyball Worlds",
+            "desc_ar": "مرافق إعلامي لموقع اللجنة البارالمبية في أوكلاهوما، أمريكا.",
+            "desc_en": "Media Attaché for the Paralympic Committee website in Oklahoma, USA."
+        },
+        {
+            "year": "2010",
+            "title_ar": "دورة إدارة المحتوى",
+            "title_en": "Content Management Course",
+            "desc_ar": "دورة في إدارة المحتوى (لوحة التحكم جملة).",
+            "desc_en": "Course in Content Management (Joomla Control Panel)."
+        },
+        {
+            "year": "2011",
+            "title_ar": "رحلة ميونخ الثقافية",
+            "title_en": "Munich Cultural Trip",
+            "desc_ar": "رحلة مع الشباب المتفوقين على مستوى ليبيا (يناير).",
+            "desc_en": "Trip with outstanding Libyan youth (January)."
+        },
+        {
+            "year": "2011",
+            "title_ar": "ملتقى ألعاب القوى",
+            "title_en": "Athletics Meeting",
+            "desc_ar": "مرافق إعلامي للجنة البارالمبية الليبية في الملتقى الدولي لألعاب القوى - تونس.",
+            "desc_en": "Media Attaché for the Libyan Paralympic Committee at the International Athletics Meeting - Tunis."
+        },
+        {
+            "year": "2012",
+            "title_ar": "ملتقى المنال",
+            "title_en": "Al Manal Forum",
+            "desc_ar": "ملتقى المنال للإعاقة والإعلام الاجتماعي - الشارقة.",
+            "desc_en": "Al Manal Forum for Disability and Social Media - Sharjah.",
+            "img": "https://www.absi.ly/wp-content/uploads/2023/01/250811_409774722400098_2046112620_n.jpg"
+        },
+        {
+            "year": "2012",
+            "title_ar": "أولمبياد لندن",
+            "title_en": "London Paralympics",
+            "desc_ar": "مرافق إعلامي لألعاب البارالمبية بلندن.",
+            "desc_en": "Media Attaché for the London Paralympics."
+        },
+        {
+            "year": "2013",
+            "title_ar": "الصحافة الإلكترونية",
+            "title_en": "Electronic Journalism",
+            "desc_ar": "الدورة الأخيرة للصحافة الإلكترونية تحت إشراف فرانس 24.",
+            "desc_en": "Final course on Electronic Journalism supervised by France 24."
+        },
+        {
+            "year": "2013",
+            "title_ar": "ليبيا بلوق",
+            "title_en": "Libya Blog",
+            "desc_ar": "مشرف موقع ليبيا بلوق (مدونات ليبية).",
+            "desc_en": "Supervisor of Libya Blog (Libyan Blogs)."
+        },
+        {
+            "year": "2013",
+            "title_ar": "بطولة آسيا لرفعات القوة",
+            "title_en": "Asian Powerlifting Champ",
+            "desc_ar": "مرافق إعلامي للبطولة المفتوحة في كوالالمبور، ماليزيا.",
+            "desc_en": "Media Attaché for the Open Championship in Kuala Lumpur, Malaysia."
+        },
+        {
+            "year": "2014",
+            "title_ar": "مشروع القيادة",
+            "title_en": "Leadership Project",
+            "desc_ar": "الملتقى المغاربي حول مشروع القيادة للأشخاص ذوي الإعاقة - الحمامات، تونس.",
+            "desc_en": "Maghreb Forum on Leadership Project for Persons with Disabilities - Hammamet, Tunisia."
+        },
+        {
+            "year": "2015",
+            "title_ar": "مؤتمر الحوار الإقليمي",
+            "title_en": "Regional Dialogue Conf",
+            "desc_ar": "المؤتمر الثالث لإدماج الأشخاص ذوي الإعاقة في المشاركة الانتخابية - جاكارتا.",
+            "desc_en": "Third Regional Dialogue Conference on Inclusion of Persons with Disabilities in Elections - Jakarta."
+        },
+        {
+            "year": "2015",
+            "title_ar": "ورشة السوشيال ميديا",
+            "title_en": "Social Media Workshop",
+            "desc_ar": "ورشة عمل حول السوشيال ميديا - اسطنبول.",
+            "desc_en": "Workshop on Social Media - Istanbul.",
+            "img": "https://www.absi.ly/wp-content/uploads/2023/01/20150814_133333-scaled.jpg"
+        },
+        {
+            "year": "2015",
+            "title_ar": "بطولة أفريقيا للسلة",
+            "title_en": "African Basketball Champ",
+            "desc_ar": "بطولة أفريقيا لكرة السلة على الكراسي - الجزائر.",
+            "desc_en": "African Wheelchair Basketball Championship - Algiers.",
+            "img": "https://www.absi.ly/wp-content/uploads/2023/01/25.jpg"
+        },
+        {
+            "year": "2016",
+            "title_ar": "الإعلام والدستور",
+            "title_en": "Media & Constitution",
+            "desc_ar": "ورشة عمل حول دور وسائل الإعلام في صياغة الدستور - تونس.",
+            "desc_en": "Workshop on the Role of Media in Constitution Drafting - Tunis."
+        },
+        {
+            "year": "2016",
+            "title_ar": "تيك كامب ليبيا",
+            "title_en": "Tech Camp Libya",
+            "desc_ar": "مخيم تيك كامب ليبيا - تونس.",
+            "desc_en": "Tech Camp Libya - Tunis."
+        },
+        {
+            "year": "2016",
+            "title_ar": "إمكانية الوصول",
+            "title_en": "Web Accessibility",
+            "desc_ar": "ورشة عمل لتعزيز إمكانية الوصول للموقع الإلكتروني - تونس.",
+            "desc_en": "Workshop on Enhancing Website Accessibility - Tunis."
+        },
+        {
+            "year": "2016",
+            "title_ar": "إعداد المدربين",
+            "title_en": "Training of Trainers",
+            "desc_ar": "دورة تدريبية في مجال حقوق الأشخاص ذوي الإعاقة - تونس.",
+            "desc_en": "Training of Trainers Course in Disability Rights - Tunis."
+        },
+        {
+            "year": "2017",
+            "title_ar": "الإعلام والمشاركة",
+            "title_en": "Media & Participation",
+            "desc_ar": "دور الإعلام في تعزيز مشاركة الأشخاص ذوي الإعاقة.",
+            "desc_en": "Role of Media in Enhancing Participation of Persons with Disabilities."
+        },
+        {
+            "year": "2020",
+            "title_ar": "اليوم العربي للإعاقة",
+            "title_en": "Arab Disability Day",
+            "desc_ar": "مشاركة في اليوم العربي للأشخاص ذوي الإعاقة (مجمع ليبيا للدراسات المتقدمة).",
+            "desc_en": "Participation in Arab Day for Persons with Disabilities (Libya Institute for Advanced Studies)."
+        },
+        {
+            "year": "2022",
+            "title_ar": "حراس الوعي",
+            "title_en": "Guardians of Awareness",
+            "desc_ar": "ضيف في برنامج حراس الوعي للحديث عن حقوق الأشخاص ذوي الإعاقة.",
+            "desc_en": "Guest on 'Guardians of Awareness' program discussing disability rights.",
+            "img": "https://www.absi.ly/wp-content/uploads/2023/01/295813615_10227801380280111_7189969978524375630_n-1.jpg"
+        },
+        {
+            "year": "2024",
+            "title_ar": "حوكمة الإنترنت",
+            "title_en": "Internet Governance",
+            "desc_ar": "مدرسة ليبيا لحوكمة الإنترنت: قضايا ذوي الإعاقة وإمكانية الوصول.",
+            "desc_en": "Libya School of Internet Governance: Disability Issues and Accessibility."
+        },
+        {
+            "year": "2025",
+            "title_ar": "معرض الكتاب الدولي",
+            "title_en": "Intl Book Fair",
+            "desc_ar": "معرض النيابة العامة الدولي للكتاب (ثقافة حقوقية).",
+            "desc_en": "Public Prosecution International Book Fair (Rights Culture)."
+        }
+    ],
+    "achievements": [
+        {
+            "icon": "fa-globe",
+            "title_ar": "مؤتمرات دولية",
+            "title_en": "Intl Conferences",
+            "items_ar": [
+                "مؤتمر المرأة ذات الإعاقة (2009)",
+                "مؤتمر جاكارتا (2015)"
+            ],
+            "items_en": [
+                "Women w/ Disabilities Conf (2009)",
+                "Jakarta Conf (2015)"
+            ]
+        },
+        {
+            "icon": "fa-camera",
+            "title_ar": "تغطيات إعلامية",
+            "title_en": "Media Coverage",
+            "items_ar": [
+                "بطولة العالم لكرة الجلوس (2010)",
+                "ألعاب لندن البارالمبية (2012)"
+            ],
+            "items_en": [
+                "Sitting Volleyball Worlds (2010)",
+                "London Paralympics (2012)"
+            ]
+        },
+        {
+            "icon": "fa-laptop-code",
+            "title_ar": "ورش عمل",
+            "title_en": "Workshops",
+            "items_ar": [
+                "دورة إدارة المحتوى (2010)",
+                "مخيم تيك كامب تونس (2016)"
+            ],
+            "items_en": [
+                "Content Management (2010)",
+                "Tech Camp Tunisia (2016)"
+            ]
+        },
+        {
+            "icon": "fa-newspaper",
+            "title_ar": "مقالات ولقاءات",
+            "title_en": "Articles & Interviews",
+            "items_ar": [
+                "ضيف في برنامج حراس الوعي",
+                "اليوم الوطني لتقنية المعلومات",
+                "التدوين الليبي كإعلام بديل"
+            ],
+            "items_en": [
+                "Guest on 'Guardians of Awareness'",
+                "National IT Day",
+                "Libyan Blogging as Alternative Media"
+            ]
+        }
+    ],
+    "orgs_data": [
+        {
+            "name_ar": "اللجنة البارالمبية الليبية",
+            "name_en": "Libyan Paralympic Committee",
+            "role_ar": "عضو مكتب الإعلام ومصمم الموقع",
+            "role_en": "Media Office Member & Web Designer",
+            "img": "https://www.absi.ly/wp-content/uploads/2023/01/2013_06_25-Logo-NPCLibya.png"
+        },
+        {
+            "name_ar": "أولمبياد ليبيا الخاص",
+            "name_en": "Libyan Special Olympics",
+            "role_ar": "مؤسس الموقع وصفحات التواصل",
+            "role_en": "Founder of Website & Social Media",
+            "img": "https://www.absi.ly/wp-content/uploads/2023/01/9h7YzDD9_400x400.jpg"
+        },
+        {
+            "name_ar": "ARABPARA",
+            "name_en": "ARABPARA",
+            "role_ar": "مؤسس",
+            "role_en": "Founder",
+            "img": "https://www.absi.ly/wp-content/uploads/2023/01/295293256_452280150238546_8882066994047620019_n-768x768.png"
+        },
+        {
+            "name_ar": "المنتدى الليبي لحقوق ذوي الإعاقة",
+            "name_en": "Libyan Forum for Disability Rights",
+            "role_ar": "مؤسس",
+            "role_en": "Founder",
+            "img": ""
+        },
+        {
+            "name_ar": "زيكم زينا",
+            "name_en": "Zaykomzayana",
+            "role_ar": "مؤسس المنظمة",
+            "role_en": "Founder",
+            "img": ""
+        },
+        {
+            "name_ar": "الهيئة العامة لصندوق التضامن",
+            "name_en": "General Authority for Social Solidarity",
+            "role_ar": "مؤسس صفحات التواصل",
+            "role_en": "Social Media Founder",
+            "img": ""
+        }
+    ]
+}

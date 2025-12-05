@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>عبدالسلام شليبك | Abdusalam Shlebak</title>
+  <link rel="icon" href="assets/favicon.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css?v=120">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="assets/favicon.jpg" alt="ABSI.LY Logo" style="width: 100%; max-width: 150px; border-radius: 50%;">
+    </div>
+
+    <nav class="nav-menu">
+      <a href="#" class="nav-item active" onclick="setPage('home'); return false;">
+        <i class="fa-solid fa-house"></i>
+        <span data-i18n="home">الرئيسية</span>
+      </a>
+      <a href="#" class="nav-item" onclick="setPage('about'); return false;">
+        <i class="fa-solid fa-user"></i>
+        <span data-i18n="about">عني</span>
+      </a>
+      <div class="nav-item" onclick="setPage('orgs')"><i class="fa-solid fa-sitemap"></i> <span
+          data-i18n="orgs">المنظمات</span></div>
+      <div class="nav-item" onclick="setPage('media')"><i class="fa-solid fa-photo-film"></i> <span
+          data-i18n="media">مشاركات</span></div>
+      <a href="https://www.absi.cc" target="_blank" class="nav-item">
+        <i class="fa-solid fa-blog"></i>
+        <span data-i18n="blog">مدونتي</span>
+      </a>
+      <a href="#" class="nav-item" onclick="setPage('contact'); return false;">
+        <i class="fa-solid fa-envelope"></i>
+        <span data-i18n="contact">تواصل</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <button class="lang-btn" onclick="toggleLang()">English</button>
+      <div class="theme-switcher">
+        <div class="theme-btn" style="background: #0f172a;" onclick="setTheme('default')" title="Dark"></div>
+        <div class="theme-btn" style="background: #f1f5f9;" onclick="setTheme('light')" title="Light"></div>
+        <div class="theme-btn" style="background: #000000;" onclick="setTheme('gold')" title="Gold"></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="main-content" id="app">
+    <!-- Content injected by JS -->
+  </main>
+
+  <!-- Mobile Bottom Nav -->
+  <nav class="mobile-nav">
+    <a href="#" class="mobile-item active" onclick="setPage('home'); return false;"><i
+        class="fa-solid fa-house"></i></a>
+    <a href="#" class="mobile-item" onclick="setPage('about'); return false;"><i class="fa-solid fa-user"></i></a>
+    <a href="#" class="mobile-item" onclick="setPage('orgs'); return false;"><i class="fa-solid fa-building"></i></a>
+    <a href="#" class="mobile-item" onclick="setPage('media'); return false;"><i class="fa-solid fa-photo-film"></i></a>
+    <a href="https://www.absi.cc" target="_blank" class="mobile-item"><i class="fa-solid fa-blog"></i></a>
+    <a href="#" class="mobile-item" onclick="toggleLang(); return false;"><i class="fa-solid fa-globe"></i></a>
+    <a href="#" class="mobile-item" onclick="cycleTheme(); return false;"><i class="fa-solid fa-palette"></i></a>
+  </nav>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollTopBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- Accessibility Widget -->
+  <div class="accessibility-widget">
+    <button id="accessBtn" title="Accessibility Menu"><i class="fa-solid fa-universal-access"></i></button>
+    <div class="access-panel" id="accessPanel">
+      <h3 data-i18n="accessTitle">Accessibility</h3>
+      <button onclick="toggleAccessClass('large-text')"><i class="fa-solid fa-text-height"></i> <span
+          data-i18n="accessText">Text Resize</span></button>
+      <button onclick="toggleAccessClass('gray-mode')"><i class="fa-solid fa-eye-slash"></i> <span
+          data-i18n="accessGray">Grayscale</span></button>
+      <button onclick="toggleAccessClass('high-contrast')"><i class="fa-solid fa-adjust"></i> <span
+          data-i18n="accessContrast">High Contrast</span></button>
+      <button onclick="toggleAccessClass('underline-links')"><i class="fa-solid fa-link"></i> <span
+          data-i18n="accessLinks">Underline Links</span></button>
+      <button onclick="resetAccess()" class="reset-btn"><i class="fa-solid fa-rotate-right"></i> <span
+          data-i18n="accessReset">Reset</span></button>
+    </div>
+  </div>
+
+  <script>
+    // --- DATA ---
+    // Default Data (Fallback for local viewing)
+    let DATA = {
+      person: {
+        name_ar: "عبدالسلام شليبك",
+        name_en: "Abdusalam Shlebak",
+        title_ar: "ناشط حقوق الإعاقة | مؤسس | مدون",
+        title_en: "Disability Rights Activist | Founder | Blogger",
+        bio_ar: "ولدت في 23 أكتوبر 1971 في ضواحي طرابلس. تعرضت لشلل الأطفال في سن مبكرة، مما شكل دافعاً لي لتكريس حياتي للدفاع عن حقوق الأشخاص ذوي الإعاقة. رحلتي من العلاج في بلغراد وفيينا إلى تأسيس المبادرات الرقمية والحقوقية هي قصة تحدٍ وإصرار. شعاري الدائم: أكون أو لا أكون.",
+        bio_en: "Born on October 23, 1971, in the suburbs of Tripoli. I contracted polio at an early age, which motivated me to dedicate my life to advocating for disability rights. My journey from treatment in Belgrade and Vienna to founding digital and human rights initiatives is a story of challenge and determination. My motto: To be or not to be.",
+        email: "info@absi.ly",
+        image: "https://www.absi.ly/wp-content/uploads/2023/01/absi1.jpg",
+        hero_image: "https://www.absi.ly/wp-content/uploads/2023/01/Absi.png"
+      },
+      stats: { years: 20, orgs: 8, countries: 12 },
+      social: {
+        twitter: "https://twitter.com/absily",
+        facebook: "http://www.facebook.com/absily",
+        linkedin: "http://www.linkedin.com/pub/abdusalam-shlebak/53/569/1a1"
+      },
+      timeline: [
+        { year: "1976-1982", title_ar: "رحلة العلاج والتعليم", title_en: "Treatment & Education", desc_ar: "سافرت إلى بلغراد للعلاج وعمري 5 سنوات. درست الابتدائية هناك وتعلمت اللغة الصربية.", desc_en: "Traveled to Belgrade for treatment at age 5. Completed primary school there and learned Serbian." },
+        { year: "1983", title_ar: "العودة والبحث", title_en: "Return & Search", desc_ar: "عدت إلى ليبيا ثم سافرت إلى فيينا للعلاج. واجهت صعوبات في الاندماج بسبب غياب البنية التحتية.", desc_en: "Returned to Libya then traveled to Vienna for treatment. Faced integration challenges due to lack of infrastructure." },
+        { year: "1980s-90s", title_ar: "التعلم الذاتي", title_en: "Self-Learning", desc_ar: "بدأت رحلة التعلم الذاتي من خلال البرامج التلفزيونية والوثائقية لتوسيع مداركي.", desc_en: "Started a self-learning journey through TV programs and documentaries to expand my knowledge." },
+        { year: "2004", title_ar: "الانطلاق الرقمي", title_en: "Digital Launch", desc_ar: "أطلقت أول موقع إلكتروني لي 'جنزور ماي هوم'. كانت انطلاقتي نحو عالم التصميم.", desc_en: "Launched my first website 'Janzour My Home'. My start in the world of web design." },
+        { year: "2006", title_ar: "المنتديات", title_en: "Forums", desc_ar: "بدأت النشاط في المنتديات الليبية (شباب ليبيا، أويا) كمشرف قسم البرامج.", desc_en: "Started activity in Libyan forums (Libya Youth, Oea) as a software section moderator." },
+        { year: "2007", title_ar: "يوتيوب وفيسبوك", title_en: "YouTube & Facebook", desc_ar: "أطلقت قناة 'جنزور كم' على يوتيوب وانضممت لفيسبوك.", desc_en: "Launched 'Janzour.com' channel on YouTube and joined Facebook." },
+        { year: "2008", title_ar: "اللجنة البارالمبية", title_en: "Paralympic Committee", desc_ar: "انضممت لمكتب الإعلام باللجنة البارالمبية الليبية وعملت كمصمم للموقع.", desc_en: "Joined the Media Office of the Libyan Paralympic Committee and worked as a web designer." },
+        { year: "2009", title_ar: "مؤتمر المرأة ذات الإعاقة", title_en: "Women with Disabilities Conf", desc_ar: "المؤتمر الأول للمرأة ذات الإعاقة بالمغرب العربي - طرابلس.", desc_en: "First Conference for Women with Disabilities in the Arab Maghreb - Tripoli." },
+        { year: "2009", title_ar: "مؤتمر الإعاقات الذهنية", title_en: "Intellectual Disabilities Conf", desc_ar: "مؤتمر سياسات التعامل مع الإعاقات الذهنية بالوطن العربي - بنغازي.", desc_en: "Conference on Policies for Dealing with Intellectual Disabilities in the Arab World - Benghazi." },
+        { year: "2009", title_ar: "التدوين", title_en: "Blogging", desc_ar: "بدأت التدوين عبر مدونة absily.wordpress.com عن حقوق ذوي الإعاقة.", desc_en: "Started blogging via absily.wordpress.com about disability rights." },
+        { year: "2010", title_ar: "بطولة العالم لكرة الجلوس", title_en: "Sitting Volleyball Worlds", desc_ar: "مرافق إعلامي لموقع اللجنة البارالمبية في أوكلاهوما، أمريكا.", desc_en: "Media Attaché for the Paralympic Committee website in Oklahoma, USA." },
+        { year: "2010", title_ar: "دورة إدارة المحتوى", title_en: "Content Management Course", desc_ar: "دورة في إدارة المحتوى (لوحة التحكم جملة).", desc_en: "Course in Content Management (Joomla Control Panel)." },
+        { year: "2011", title_ar: "رحلة ميونخ الثقافية", title_en: "Munich Cultural Trip", desc_ar: "رحلة مع الشباب المتفوقين على مستوى ليبيا (يناير).", desc_en: "Trip with outstanding Libyan youth (January)." },
+        { year: "2011", title_ar: "ملتقى ألعاب القوى", title_en: "Athletics Meeting", desc_ar: "مرافق إعلامي للجنة البارالمبية الليبية في الملتقى الدولي لألعاب القوى - تونس.", desc_en: "Media Attaché for the Libyan Paralympic Committee at the International Athletics Meeting - Tunis." },
+        { year: "2012", title_ar: "ملتقى المنال", title_en: "Al Manal Forum", desc_ar: "ملتقى المنال للإعاقة والإعلام الاجتماعي - الشارقة.", desc_en: "Al Manal Forum for Disability and Social Media - Sharjah.", img: "https://www.absi.ly/wp-content/uploads/2023/01/250811_409774722400098_2046112620_n.jpg" },
+        { year: "2012", title_ar: "أولمبياد لندن", title_en: "London Paralympics", desc_ar: "مرافق إعلامي لألعاب البارالمبية بلندن.", desc_en: "Media Attaché for the London Paralympics." },
+        { year: "2013", title_ar: "الصحافة الإلكترونية", title_en: "Electronic Journalism", desc_ar: "الدورة الأخيرة للصحافة الإلكترونية تحت إشراف فرانس 24.", desc_en: "Final course on Electronic Journalism supervised by France 24." },
+        { year: "2013", title_ar: "ليبيا بلوق", title_en: "Libya Blog", desc_ar: "مشرف موقع ليبيا بلوق (مدونات ليبية).", desc_en: "Supervisor of Libya Blog (Libyan Blogs)." },
+        { year: "2013", title_ar: "بطولة آسيا لرفعات القوة", title_en: "Asian Powerlifting Champ", desc_ar: "مرافق إعلامي للبطولة المفتوحة في كوالالمبور، ماليزيا.", desc_en: "Media Attaché for the Open Championship in Kuala Lumpur, Malaysia." },
+        { year: "2014", title_ar: "مشروع القيادة", title_en: "Leadership Project", desc_ar: "الملتقى المغاربي حول مشروع القيادة للأشخاص ذوي الإعاقة - الحمامات، تونس.", desc_en: "Maghreb Forum on Leadership Project for Persons with Disabilities - Hammamet, Tunisia." },
+        { year: "2015", title_ar: "مؤتمر الحوار الإقليمي", title_en: "Regional Dialogue Conf", desc_ar: "المؤتمر الثالث لإدماج الأشخاص ذوي الإعاقة في المشاركة الانتخابية - جاكارتا.", desc_en: "Third Regional Dialogue Conference on Inclusion of Persons with Disabilities in Elections - Jakarta." },
+        { year: "2015", title_ar: "ورشة السوشيال ميديا", title_en: "Social Media Workshop", desc_ar: "ورشة عمل حول السوشيال ميديا - اسطنبول.", desc_en: "Workshop on Social Media - Istanbul.", img: "https://www.absi.ly/wp-content/uploads/2023/01/20150814_133333-scaled.jpg" },
+        { year: "2015", title_ar: "بطولة أفريقيا للسلة", title_en: "African Basketball Champ", desc_ar: "بطولة أفريقيا لكرة السلة على الكراسي - الجزائر.", desc_en: "African Wheelchair Basketball Championship - Algiers.", img: "https://www.absi.ly/wp-content/uploads/2023/01/25.jpg" },
+        { year: "2016", title_ar: "الإعلام والدستور", title_en: "Media & Constitution", desc_ar: "ورشة عمل حول دور وسائل الإعلام في صياغة الدستور - تونس.", desc_en: "Workshop on the Role of Media in Constitution Drafting - Tunis." },
+        { year: "2016", title_ar: "تيك كامب ليبيا", title_en: "Tech Camp Libya", desc_ar: "مخيم تيك كامب ليبيا - تونس.", desc_en: "Tech Camp Libya - Tunis." },
+        { year: "2016", title_ar: "إمكانية الوصول", title_en: "Web Accessibility", desc_ar: "ورشة عمل لتعزيز إمكانية الوصول للموقع الإلكتروني - تونس.", desc_en: "Workshop on Enhancing Website Accessibility - Tunis." },
+        { year: "2016", title_ar: "إعداد المدربين", title_en: "Training of Trainers", desc_ar: "دورة تدريبية في مجال حقوق الأشخاص ذوي الإعاقة - تونس.", desc_en: "Training of Trainers Course in Disability Rights - Tunis." },
+        { year: "2017", title_ar: "الإعلام والمشاركة", title_en: "Media & Participation", desc_ar: "دور الإعلام في تعزيز مشاركة الأشخاص ذوي الإعاقة.", desc_en: "Role of Media in Enhancing Participation of Persons with Disabilities." },
+        { year: "2020", title_ar: "اليوم العربي للإعاقة", title_en: "Arab Disability Day", desc_ar: "مشاركة في اليوم العربي للأشخاص ذوي الإعاقة (مجمع ليبيا للدراسات المتقدمة).", desc_en: "Participation in Arab Day for Persons with Disabilities (Libya Institute for Advanced Studies)." },
+        { year: "2022", title_ar: "حراس الوعي", title_en: "Guardians of Awareness", desc_ar: "ضيف في برنامج حراس الوعي للحديث عن حقوق الأشخاص ذوي الإعاقة.", desc_en: "Guest on 'Guardians of Awareness' program discussing disability rights.", img: "https://www.absi.ly/wp-content/uploads/2023/01/295813615_10227801380280111_7189969978524375630_n-1.jpg" },
+        { year: "2024", title_ar: "حوكمة الإنترنت", title_en: "Internet Governance", desc_ar: "مدرسة ليبيا لحوكمة الإنترنت: قضايا ذوي الإعاقة وإمكانية الوصول.", desc_en: "Libya School of Internet Governance: Disability Issues and Accessibility." },
+        { year: "2025", title_ar: "معرض الكتاب الدولي", title_en: "Intl Book Fair", desc_ar: "معرض النيابة العامة الدولي للكتاب (ثقافة حقوقية).", desc_en: "Public Prosecution International Book Fair (Rights Culture)." }
+      ],
+      achievements: [
+        { icon: "fa-globe", title_ar: "مؤتمرات دولية", title_en: "Intl Conferences", items_ar: ["مؤتمر المرأة ذات الإعاقة (2009)", "مؤتمر جاكارتا (2015)"], items_en: ["Women w/ Disabilities Conf (2009)", "Jakarta Conf (2015)"] },
+        { icon: "fa-camera", title_ar: "تغطيات إعلامية", title_en: "Media Coverage", items_ar: ["بطولة العالم لكرة الجلوس (2010)", "ألعاب لندن البارالمبية (2012)"], items_en: ["Sitting Volleyball Worlds (2010)", "London Paralympics (2012)"] },
+        { icon: "fa-laptop-code", title_ar: "ورش عمل", title_en: "Workshops", items_ar: ["دورة إدارة المحتوى (2010)", "مخيم تيك كامب تونس (2016)"], items_en: ["Content Management (2010)", "Tech Camp Tunisia (2016)"] },
+        { icon: "fa-newspaper", title_ar: "مقالات ولقاءات", title_en: "Articles & Interviews", items_ar: ["ضيف في برنامج حراس الوعي", "اليوم الوطني لتقنية المعلومات", "التدوين الليبي كإعلام بديل"], items_en: ["Guest on 'Guardians of Awareness'", "National IT Day", "Libyan Blogging as Alternative Media"] }
+      ],
+      orgs_data: [
+        { name_ar: "اللجنة البارالمبية الليبية", name_en: "Libyan Paralympic Committee", role_ar: "عضو مكتب الإعلام ومصمم الموقع", role_en: "Media Office Member & Web Designer", img: "https://www.absi.ly/wp-content/uploads/2023/01/2013_06_25-Logo-NPCLibya.png" },
+        { name_ar: "أولمبياد ليبيا الخاص", name_en: "Libyan Special Olympics", role_ar: "مؤسس الموقع وصفحات التواصل", role_en: "Founder of Website & Social Media", img: "https://www.absi.ly/wp-content/uploads/2023/01/9h7YzDD9_400x400.jpg" },
+        { name_ar: "ARABPARA", name_en: "ARABPARA", role_ar: "مؤسس", role_en: "Founder", img: "https://www.absi.ly/wp-content/uploads/2023/01/295293256_452280150238546_8882066994047620019_n-768x768.png" },
+        { name_ar: "المنتدى الليبي لحقوق ذوي الإعاقة", name_en: "Libyan Forum for Disability Rights", role_ar: "مؤسس", role_en: "Founder", img: "" },
+        { name_ar: "زيكم زينا", name_en: "Zaykomzayana", role_ar: "مؤسس المنظمة", role_en: "Founder", img: "" },
+        { name_ar: "الهيئة العامة لصندوق التضامن", name_en: "General Authority for Social Solidarity", role_ar: "مؤسس صفحات التواصل", role_en: "Social Media Founder", img: "" }
+      ]
+    };
+
+    // Try to fetch updated data (for CMS/Server), fall back to default if fails (Local)
+    fetch('assets/data.json')
+      .then(response => {
+        if (!response.ok) throw new Error("Network response was not ok");
+        return response.json();
+      })
+      .then(data => {
+        console.log("Loaded data from CMS file");
+        DATA = data;
+        updateUI();
+        renderHome();
+      })
+      .catch(error => console.log('Running in local mode with default data (CMS requires server)'));
+
+    const STRINGS = {
+      home: { ar: "الرئيسية", en: "Home" },
+      about: { ar: "عني", en: "About" },
+      orgs: { ar: "المنظمات", en: "Organizations" },
+      media: { ar: "مشاركات", en: "Participations" },
+      blog: { ar: "مدونتي", en: "My Blog" },
+      contact: { ar: "تواصل", en: "Contact" },
+      readMore: { ar: "اقرأ المزيد", en: "Read More" },
+      years: { ar: "سنوات خبرة", en: "Years Exp" },
+      orgs_count: { ar: "منظمات", en: "Organizations" },
+      countries: { ar: "دول زرتها", en: "Countries Visited" },
+      accessTitle: { ar: "سهولة الوصول", en: "Accessibility" },
+      accessText: { ar: "تكبير الخط", en: "Text Resize" },
+      accessGray: { ar: "تدرج رمادي", en: "Grayscale" },
+      accessContrast: { ar: "تباين عالي", en: "High Contrast" },
+      accessLinks: { ar: "تسطير الروابط", en: "Underline Links" },
+      accessReset: { ar: "إعادة تعيين", en: "Reset" }
+    };
+
+    let lang = "ar";
+
+    // Theme Logic
+    function setTheme(themeName) {
+      document.documentElement.setAttribute('data-theme', themeName);
+      localStorage.setItem('theme', themeName);
+
+      // Update active state of buttons
+      document.querySelectorAll('.theme-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('onclick').includes(themeName)) {
+          btn.classList.add('active');
+        }
+      });
+    }
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'default';
+    setTheme(savedTheme);
+
+    function toggleLang() {
+      lang = lang === "ar" ? "en" : "ar";
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      document.querySelector('.lang-btn').innerText = lang === "ar" ? "English" : "العربية";
+      updateUI();
+      // Re-render current active page to update content
+      const activePage = document.querySelector('.nav-item.active').getAttribute('onclick').match(/'([^']+)'/)[1];
+      setPage(activePage);
+    }
+
+    function updateUI() {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        el.innerText = STRINGS[el.dataset.i18n][lang];
+      });
+    }
+
+    function cycleTheme() {
+      const current = localStorage.getItem('theme') || 'default';
+      const themes = ['default', 'light', 'gold'];
+      const nextIndex = (themes.indexOf(current) + 1) % themes.length;
+      setTheme(themes[nextIndex]);
+    }
+
+    function setPage(page) {
+      // Update Active State
+      document.querySelectorAll('.nav-item, .mobile-item').forEach(el => el.classList.remove('active'));
+
+      // Find elements that link to this page and add active class
+      const selector = `.nav-item[onclick*="'${page}'"], .mobile-item[onclick*="'${page}'"]`;
+      document.querySelectorAll(selector).forEach(el => el.classList.add('active'));
+
+      const app = document.getElementById('app');
+      app.style.opacity = 0;
+
+      setTimeout(() => {
+        if (page === 'home') renderHome();
+        else if (page === 'about') renderAbout();
+        else if (page === 'orgs') renderOrgs();
+        else if (page === 'media') renderMedia();
+        else if (page === 'contact') renderContact();
+
+        app.style.opacity = 1;
+        window.scrollTo(0, 0);
+      }, 300);
+    }
+
+    function renderHome() {
+      const d = DATA.person;
+      const s = DATA.stats;
+      document.getElementById('app').innerHTML = `
+                <section class="hero">
+                    <div class="hero-text">
+                        <h1>${lang === 'ar' ? d.name_ar : d.name_en}</h1>
+                        <p class="subtitle">${lang === 'ar' ? d.title_ar : d.title_en}</p>
+                        <p class="bio">${lang === 'ar' ? d.bio_ar : d.bio_en}</p>
+                        <div class="stats-row">
+                            <div class="stat"><b>${s.years}</b> <span>${STRINGS.years[lang]}</span></div>
+                            <div class="stat"><b>${s.orgs}</b> <span>${STRINGS.orgs_count[lang]}</span></div>
+                            <div class="stat"><b>${s.countries}</b> <span>${STRINGS.countries[lang]}</span></div>
+                        </div>
+                    </div>
+                    <div class="hero-img">
+                        <img src="assets/hero_profile.png" onerror="this.src='assets/profile.jpg'">
+                    </div>
+                </section>
+
+                <section class="page-section" id="blog-section">
+                    <h2>${STRINGS.blog[lang]}</h2>
+                    <div class="grid" id="blog-grid">
+                        <p>Loading posts...</p>
+                    </div>
+                </section>
+
+                <section class="page-section" id="video-section">
+                    <h2>${lang === 'ar' ? 'أحدث الفيديوهات' : 'Latest Videos'}</h2>
+                    <div class="grid" id="video-grid">
+                        <p>Loading videos...</p>
+                    </div>
+                </section>
+
+                <section class="page-section" id="album-section">
+                    <h2>${lang === 'ar' ? 'ألبوم الصور' : 'Photo Album'}</h2>
+                    <div class="grid album-grid">
+                        <div class="card album-card"><img src="assets/album_1.jpg" onclick="window.open(this.src)"></div>
+                        <div class="card album-card"><img src="assets/album_2.jpg" onclick="window.open(this.src)"></div>
+                        <div class="card album-card"><img src="assets/album_3.jpg" onclick="window.open(this.src)"></div>
+                        <div class="card album-card"><img src="assets/album_4.jpg" onclick="window.open(this.src)"></div>
+                        <div class="card album-card"><img src="assets/album_5.jpg" onclick="window.open(this.src)"></div>
+                        <div class="card album-card"><img src="assets/album_6.jpg" onclick="window.open(this.src)"></div>
+                        <div class="card album-card"><img src="assets/album_7.jpg" onclick="window.open(this.src)"></div>
+                        <div class="card album-card"><img src="assets/album_8.jpg" onclick="window.open(this.src)"></div>
+                        <div class="card album-card"><img src="assets/album_9.jpg" onclick="window.open(this.src)"></div>
+                        <div class="card album-card"><img src="assets/album_10.jpg" onclick="window.open(this.src)"></div>
+                        <div class="card album-card"><img src="assets/album_11.jpg" onclick="window.open(this.src)"></div>
+                        <div class="card album-card"><img src="assets/album_12.jpg" onclick="window.open(this.src)"></div>
+                        <div class="card album-card"><img src="assets/album_13.jpg" onclick="window.open(this.src)"></div>
+                        <div class="card album-card"><img src="assets/album_14.jpg" onclick="window.open(this.src)"></div>
+                        <div class="card album-card"><img src="assets/album_15.jpg" onclick="window.open(this.src)"></div>
+                    </div>
+                </section>
+
+                <footer class="main-footer">
+                    <p>&copy; <span id="year"></span> ${lang === 'ar' ? 'عبدالسلام مصطفى شليبك' : 'Abdusalam Mustafa Shlebak'}</p>
+                </footer>
+            `;
+      document.getElementById('year').innerText = new Date().getFullYear();
+      fetchAndRenderBlogPosts();
+      fetchAndRenderYouTubeVideos();
+    }
+
+    function fetchAndRenderYouTubeVideos() {
+      const videoGrid = document.getElementById('video-grid');
+      // Using rss2json to fetch YouTube RSS feed
+      const rssUrl = 'https://www.youtube.com/feeds/videos.xml?user=janzourcom';
+      const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+          if (data.status === 'ok' && data.items) {
+            let videoHTML = '';
+            // Take first 3 items
+            data.items.slice(0, 3).forEach(item => {
+              const title = item.title;
+              const link = item.link;
+              const img = item.thumbnail; // YouTube RSS provides high quality thumbnails
+
+              videoHTML += `
+                <a href="${link}" target="_blank" class="card blog-card video-card">
+                    <div class="blog-thumb" style="background-image:url('${img}'); position:relative;">
+                        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background:rgba(0,0,0,0.6); width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center;">
+                            <i class="fa-solid fa-play" style="color:white; font-size:20px;"></i>
+                        </div>
+                    </div>
+                    <h3>${title}</h3>
+                    <span>${lang === 'ar' ? 'شاهد الفيديو' : 'Watch Video'} <i class="fa-brands fa-youtube" style="color:red;"></i></span>
+                </a>
+              `;
+            });
+            videoGrid.innerHTML = videoHTML;
+          } else {
+            videoGrid.innerHTML = '<p>No videos found.</p>';
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching YouTube feed:', error);
+          videoGrid.innerHTML = '<p>Failed to load videos.</p>';
+        });
+    }
+
+    function fetchAndRenderBlogPosts() {
+      const blogGrid = document.getElementById('blog-grid');
+      blogGrid.innerHTML = '<p>Loading posts...</p>';
+
+      if (lang === 'ar') {
+        // Arabic: Blogger Feed (JSONP)
+        window.handleBlogPosts = function (data) {
+          const posts = data.feed.entry;
+          let blogHTML = '';
+          if (posts) {
+            posts.forEach(post => {
+              const title = post.title.$t;
+              let link = '#';
+              if (post.link) {
+                const altLink = post.link.find(l => l.rel === 'alternate');
+                if (altLink) link = altLink.href;
+              }
+
+              let img = 'assets/placeholder.jpg';
+              if (post.media$thumbnail) {
+                img = post.media$thumbnail.url.replace('s72-c', 's600');
+              } else {
+                const content = post.content ? post.content.$t : '';
+                const imgMatch = content.match(/<img[^>]+src="([^">]+)"/);
+                if (imgMatch) img = imgMatch[1];
+              }
+
+              blogHTML += createBlogCard(link, img, title);
+            });
+            blogGrid.innerHTML = blogHTML;
+          } else {
+            blogGrid.innerHTML = '<p>No posts found.</p>';
+          }
+        };
+
+        const script = document.createElement('script');
+        script.src = 'https://www.absi.cc/feeds/posts/default?alt=json-in-script&callback=handleBlogPosts&max-results=3';
+        script.onerror = function () {
+          blogGrid.innerHTML = '<p>Failed to load blog posts (Connection Error).</p>';
+        };
+        document.body.appendChild(script);
+
+      } else {
+        // English: Substack Feed (via rss2json)
+        const rssUrl = 'https://absily.substack.com/feed';
+        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+
+        fetch(apiUrl)
+          .then(response => response.json())
+          .then(data => {
+            if (data.status === 'ok' && data.items) {
+              let blogHTML = '';
+              // Take first 3 items
+              data.items.slice(0, 3).forEach(item => {
+                const title = item.title;
+                const link = item.link;
+                let img = item.thumbnail;
+
+                // If no thumbnail in feed, try to extract from content
+                if (!img || !img.startsWith('http')) {
+                  const imgMatch = item.content.match(/<img[^>]+src="([^">]+)"/);
+                  if (imgMatch) img = imgMatch[1];
+                  else img = 'assets/placeholder.jpg';
+                }
+
+                blogHTML += createBlogCard(link, img, title);
+              });
+              blogGrid.innerHTML = blogHTML;
+            } else {
+              blogGrid.innerHTML = '<p>No posts found.</p>';
+            }
+          })
+          .catch(error => {
+            console.error('Error fetching Substack feed:', error);
+            blogGrid.innerHTML = '<p>Failed to load blog posts.</p>';
+          });
+      }
+    }
+
+    function createBlogCard(link, img, title) {
+      return `
+        <a href="${link}" target="_blank" class="card blog-card">
+            <div class="blog-thumb" style="background-image:url('${img}')"></div>
+            <h3>${title}</h3>
+            <span>${STRINGS.readMore[lang]} <i class="fa-solid fa-arrow-${lang === 'ar' ? 'left' : 'right'}"></i></span>
+        </a>
+      `;
+    }
+
+    function renderAbout() {
+      let timelineHTML = '';
+      DATA.timeline.forEach(item => {
+        timelineHTML += `
+            <div class="timeline-item">
+                <div class="year">${item.year}</div>
+                <div class="content">
+                    <h3>${lang === 'ar' ? item.title_ar : item.title_en}</h3>
+                    <p>${lang === 'ar' ? item.desc_ar : item.desc_en}</p>
+                    ${item.img ? `<img src="${item.img}" style="width:100%; max-width:300px; margin-top:10px; border-radius:8px; display:block;" onerror="this.style.display='none'">` : ''}
+                </div>
+            </div>
+        `;
+      });
+
+      document.getElementById('app').innerHTML = `
+                <section class="page-section">
+                    <h2>${STRINGS.about[lang]}</h2>
+                    <div class="timeline">
+                        ${timelineHTML}
+                    </div>
+                </section>
+            `;
+    }
+
+    function renderOrgs() {
+      let orgsHTML = '';
+      DATA.orgs_data.forEach(org => {
+        orgsHTML += `
+            <div class="card">
+                ${org.img ? `<img src="${org.img}" style="width:100%; height:150px; object-fit:contain; margin-bottom:15px;" onerror="this.style.display='none'">` : ''}
+                <h3>${lang === 'ar' ? org.name_ar : org.name_en}</h3>
+                <p style="font-size:0.9em; color:var(--text-muted); margin-top:5px;">${lang === 'ar' ? org.role_ar : org.role_en}</p>
+            </div>
+          `;
+      });
+
+      document.getElementById('app').innerHTML = `
+                <section class="page-section">
+                    <h2>${STRINGS.orgs[lang]}</h2>
+                    <div class="grid">
+                        ${orgsHTML}
+                    </div>
+                </section>
+            `;
+    }
+
+    function renderMedia() {
+      let achievementsHTML = '';
+      DATA.achievements.forEach(ach => {
+        const items = lang === 'ar' ? ach.items_ar : ach.items_en;
+        const listHTML = items.map(i => `<li>${i}</li>`).join('');
+        achievementsHTML += `
+            <div class="card media-card">
+                <i class="fa-solid ${ach.icon}"></i>
+                <h3>${lang === 'ar' ? ach.title_ar : ach.title_en}</h3>
+                <ul style="list-style: none; padding: 0; margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
+                    ${listHTML}
+                </ul>
+            </div>
+          `;
+      });
+
+      document.getElementById('app').innerHTML = `
+                <section class="page-section">
+                    <h2>${STRINGS.media[lang]}</h2>
+                    <div class="grid">
+                        ${achievementsHTML}
+                    </div>
+                </section>
+            `;
+    }
+
+    function renderContact() {
+      document.getElementById('app').innerHTML = `
+                <section class="page-section contact-page">
+                    <h2>${STRINGS.contact[lang]}</h2>
+                    <div class="contact-card">
+                        <p><i class="fa-solid fa-envelope"></i> ${DATA.person.email}</p>
+                        <div class="social-icons">
+                            <a href="${DATA.social.twitter}"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="${DATA.social.facebook}"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="${DATA.social.linkedin}"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </section>
+            `;
+    }
+
+    // Init
+    updateUI();
+    renderHome();
+
+    // --- Scroll to Top Logic ---
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+    window.onscroll = function () {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollTopBtn.style.display = "block";
+      } else {
+        scrollTopBtn.style.display = "none";
+      }
+    };
+
+    scrollTopBtn.onclick = function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    // --- Accessibility Logic ---
+    const accessBtn = document.getElementById("accessBtn");
+    const accessPanel = document.getElementById("accessPanel");
+
+    accessBtn.onclick = function () {
+      accessPanel.classList.toggle("show");
+    };
+
+    function toggleAccessClass(className) {
+      document.body.classList.toggle(className);
+      // Save preference
+      if (document.body.classList.contains(className)) {
+        localStorage.setItem(className, 'true');
+      } else {
+        localStorage.removeItem(className);
+      }
+    }
+
+    function resetAccess() {
+      ['large-text', 'gray-mode', 'high-contrast', 'underline-links'].forEach(cls => {
+        document.body.classList.remove(cls);
+        localStorage.removeItem(cls);
+      });
+    }
+
+    // Load Accessibility Preferences
+    ['large-text', 'gray-mode', 'high-contrast', 'underline-links'].forEach(cls => {
+      if (localStorage.getItem(cls) === 'true') {
+        document.body.classList.add(cls);
+      }
+    });
+  </script>
+</body>
+
+</html>

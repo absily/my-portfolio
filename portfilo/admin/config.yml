@@ -1,0 +1,51 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "data"
+    label: "Site Data"
+    files:
+      - file: "assets/data.json"
+        label: "Global Data"
+        name: "global_data"
+        fields:
+          - {label: "Person Info", name: "person", widget: "object", fields: [
+              {label: "Name (AR)", name: "name_ar", widget: "string"},
+              {label: "Name (EN)", name: "name_en", widget: "string"},
+              {label: "Title (AR)", name: "title_ar", widget: "string"},
+              {label: "Title (EN)", name: "title_en", widget: "string"},
+              {label: "Bio (AR)", name: "bio_ar", widget: "text"},
+              {label: "Bio (EN)", name: "bio_en", widget: "text"},
+              {label: "Email", name: "email", widget: "string"},
+              {label: "Profile Image", name: "image", widget: "image"},
+              {label: "Hero Image", name: "hero_image", widget: "image"}
+            ]}
+          - {label: "Stats", name: "stats", widget: "object", fields: [
+              {label: "Years", name: "years", widget: "number"},
+              {label: "Organizations", name: "orgs", widget: "number"},
+              {label: "Countries", name: "countries", widget: "number"}
+            ]}
+          - {label: "Social Links", name: "social", widget: "object", fields: [
+              {label: "Twitter", name: "twitter", widget: "string"},
+              {label: "Facebook", name: "facebook", widget: "string"},
+              {label: "LinkedIn", name: "linkedin", widget: "string"}
+            ]}
+          - {label: "Timeline", name: "timeline", widget: "list", fields: [
+              {label: "Year", name: "year", widget: "string"},
+              {label: "Title (AR)", name: "title_ar", widget: "string"},
+              {label: "Title (EN)", name: "title_en", widget: "string"},
+              {label: "Description (AR)", name: "desc_ar", widget: "text"},
+              {label: "Description (EN)", name: "desc_en", widget: "text"},
+              {label: "Image", name: "img", widget: "image", required: false}
+            ]}
+          - {label: "Organizations", name: "orgs_data", widget: "list", fields: [
+              {label: "Name (AR)", name: "name_ar", widget: "string"},
+              {label: "Name (EN)", name: "name_en", widget: "string"},
+              {label: "Role (AR)", name: "role_ar", widget: "string"},
+              {label: "Role (EN)", name: "role_en", widget: "string"},
+              {label: "Image", name: "img", widget: "image", required: false}
+            ]}
